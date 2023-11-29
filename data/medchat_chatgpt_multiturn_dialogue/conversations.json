@@ -1,0 +1,92 @@
+[
+    {
+        "id": 11916,
+        "model": "medchat",
+        "conversation": [
+            {
+                "role": "patient",
+                "content": "您好，我是一位78岁的女性患者。我有一段时间头晕发作，听力也下降了。我还有糖尿病、肾病和高血压的既往史。"
+            },
+            {
+                "role": "doctor",
+                "content": "您好，很高兴为您服务。您的头晕发作是怎样的感觉？有没有其他不适的症状？"
+            },
+            {
+                "role": "patient",
+                "content": "测试"
+            },
+            {
+                "role": "doctor",
+                "content": "您有没有偏头痛的病史或晕车的情况？"
+            },
+            {
+                "role": "patient",
+                "content": "测试"
+            },
+            {
+                "role": "doctor",
+                "content": "您有家族中有人有类似的症状吗？"
+            }
+        ]
+    },
+    {
+        "id": 13804,
+        "model": "medchat",
+        "conversation": [
+            {
+                "role": "patient",
+                "content": "您好，我是一位53岁的男性患者。最近几个月我一直有间断反复右耳鸣的问题，首次出现时持续了1周，后来有所好转。"
+            },
+            {
+                "role": "doctor",
+                "content": "您好，先生。听到您的描述，我可以初步判断您可能患有右耳突聋伴眩晕。请问您有没有其他症状或者既往史？"
+            },
+            {
+                "role": "patient",
+                "content": "测试"
+            },
+            {
+                "role": "doctor",
+                "content": "好的，谢谢您的配合。除了耳鸣和眩晕，您还有其他不适吗？比如头痛、晕车等？"
+            },
+            {
+                "role": "patient",
+                "content": "测试"
+            },
+            {
+                "role": "doctor",
+                "content": "好的，我明白了。您有没有家族史或者正在使用的药物？"
+            }
+        ]
+    },
+    {
+        "id": 5210,
+        "model": "medchat",
+        "conversation": [
+            {
+                "role": "patient",
+                "content": "您好，我是一名54岁的男性患者，有复诊的糖尿病史，最近3个月左耳鸣伴听力下降。我最近出现了反复眩晕发作，持续数秒，起卧床时更明显，左侧眩晕感强烈。此外，我还有Roll左强于右背地眼震的体征。"
+            },
+            {
+                "role": "doctor",
+                "content": "您好，很高兴为您服务。您有没有其他不适的症状？比如偏头痛史或晕车史？"
+            },
+            {
+                "role": "patient",
+                "content": "测试"
+            },
+            {
+                "role": "doctor",
+                "content": "好的，请您进行Dix-Hallpike试验，检查您的左侧位置性良性阵发性眩晕。"
+            },
+            {
+                "role": "patient",
+                "content": "测试"
+            },
+            {
+                "role": "doctor",
+                "content": "根据您的体征和检查结果，初步诊断为良性阵发性位置性眩晕（BPPV），并伴有左后半规管异常（LPC）。请注意，这只是初步诊断，具体治疗方案还需要进一步检查和确诊。仅供参考，请遵医嘱。"
+            }
+        ]
+    }
+]
