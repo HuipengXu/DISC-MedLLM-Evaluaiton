@@ -1,16 +1,26 @@
 import copy
 
+import openai
+
 from transformers import GenerationConfig
+
+client = openai.OpenAI(api_key="")
 
 
 llama2_7b_instruct_doctor = "medchat"
 baichuan2_7b_chat_doctor = "baichuan2-7b-chat"
 bianque2_doctor = "bianque-2"
+# gpt3_doctor = "gpt-3.5-turbo-1106"
+gpt3_doctor = "gpt-3.5-turbo"
+gpt4_doctor = "gpt-4-1106-preview"
+
 
 doctors_path = {
     llama2_7b_instruct_doctor: "models/llama-2-7b-instruct-all_v3-e3_merged",
     baichuan2_7b_chat_doctor: "models/Baichuan2-7B-Chat",
     bianque2_doctor: "models/AI-ModelScope/BianQue-2",
+    gpt3_doctor: gpt3_doctor,
+    gpt4_doctor: gpt4_doctor,
 }
 
 docters_instruction_templates = {
@@ -26,9 +36,9 @@ doctors_generation_config = {
         do_sample=True,
         max_new_tokens=256,
     ),
-    baichuan2_7b_chat_doctor: GenerationConfig.from_pretrained(
-        doctors_path[baichuan2_7b_chat_doctor]
-    ),
+    # baichuan2_7b_chat_doctor: GenerationConfig.from_pretrained(
+    #     doctors_path[baichuan2_7b_chat_doctor]
+    # ),
 }
 
 
@@ -138,10 +148,29 @@ def bianque2(model, tokenizer, history=None):
     return history
 
 
+def gpt(model, tokenizer=None, history=None):
+    history_copy = preprocess_history(history)
+    history_copy = [
+        {
+            "role": "user" if turn["role"] == "assistant" else "assistant",
+            "content": turn["content"],
+        }
+        for turn in history_copy
+    ]
+    system_message = "你现在是一名专业的医生，需要你根据病人提供的信息和病人展开对话，进行专业的诊断以及给出治疗建议"
+    history_copy = [{"role": "system", "content": system_message}] + history_copy
+    response = client.chat.completions.create(model=model, messages=history_copy)
+    response_text = response.choices[0].message.content.strip()
+    history += [{"role": "user", "content": response_text}]
+    return history
+
+
 doctors_call = {
     llama2_7b_instruct_doctor: llama2_chat,
     baichuan2_7b_chat_doctor: baichuan2_7b_chat,
     bianque2_doctor: bianque2,
+    gpt3_doctor: gpt,
+    gpt4_doctor: gpt,
 }
 
 

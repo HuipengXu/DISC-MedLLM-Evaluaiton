@@ -41,18 +41,21 @@ def main(conversation_path):
     for _, row in tqdm(
         conversation_df.iterrows(), desc="Judging", total=len(conversation_df)
     ):
-        conversation = row.conversation
-        system_message = JUDGE_PROMPT.format_map({"conversation": conversation})
+        conversation = str(row.conversation)
         messages = [
             {
                 "role": "system",
-                "content": system_message,
+                "content": JUDGE_PROMPT,
             },
             {"role": "user", "content": conversation},
         ]
         response = client.chat.completions.create(
-            model="gpt-4-1106-preview", messages=messages
+            model="gpt-3.5-turbo", messages=messages
         )
+        # TODO: 正式评估时需使用gpt4
+        # response = client.chat.completions.create(
+        #     model="gpt-4-1106-preview", messages=messages
+        # )
         results = response.choices[0].message.content.strip()
         ratings = extract_ratings(results)
         if ratings is None:
@@ -69,4 +72,4 @@ def main(conversation_path):
 
 
 if __name__ == "__main__":
-    main("data/medchat_chatgpt_multiturn_dialogue/conversations.json")
+    main("data/gpt-3.5-turbo_chatgpt_multiturn_dialogue/conversations.json")

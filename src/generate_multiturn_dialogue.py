@@ -17,7 +17,7 @@ client = openai.OpenAI(api_key="")
 
 def gpt3_interaction(chat_history):
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106", messages=chat_history
+        model="gpt-3.5-turbo", messages=chat_history
     )
     response_text = response.choices[0].message.content.strip()
     chat_history += [{"role": "assistant", "content": response_text}]
@@ -36,24 +36,28 @@ def chat_with_chatgpt(doctor):
 
     dataset = pd.read_json("./data/instruct_chatgpt_messages.jsonl", lines=True).head(3)
 
-    tokenizer = AutoTokenizer.from_pretrained(
-        model_dir, legacy=True, trust_remote_code=True
-    )
-    model = AutoModelForCausalLM.from_pretrained(
-        model_dir,
-        torch_dtype=torch.float16,
-        device_map="auto",
-        low_cpu_mem_usage=True,
-        trust_remote_code=True,
-    ).eval()
+    if doctor.startswith('gpt'):
+        model = doctor
+        tokenizer = None
+    else:
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_dir, legacy=True, trust_remote_code=True
+        )
+        model = AutoModelForCausalLM.from_pretrained(
+            model_dir,
+            torch_dtype=torch.float16,
+            device_map="auto",
+            low_cpu_mem_usage=True,
+            trust_remote_code=True,
+        ).eval()
     chat_func = doctors_call[doctor]
 
     save_dir = f"data/{doctor}_chatgpt_multiturn_dialogue"
+    # （这里只是示例，你可以根据需要调整）
+    num_turns = 2
     for _, row in tqdm(dataset.iterrows(), desc="Chating", total=len(dataset)):
         gpt_chat_history = row.history
 
-        # （这里只是示例，你可以根据需要调整）
-        num_turns = 2
         for _ in range(num_turns):
             gpt_chat_history = chat_func(
                 model,
@@ -94,5 +98,5 @@ def chat_with_chatgpt(doctor):
 
 
 if __name__ == "__main__":
-    doctor = llama2_7b_instruct_doctor
+    doctor = gpt3_doctor
     chat_with_chatgpt(doctor)
