@@ -4,7 +4,8 @@ import openai
 
 from transformers import GenerationConfig
 
-client = openai.OpenAI(api_key="")
+openai_api_key = "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"
+client = openai.OpenAI(api_key=openai_api_key)
 
 
 llama2_7b_instruct_doctor = "medchat"
@@ -36,9 +37,9 @@ doctors_generation_config = {
         do_sample=True,
         max_new_tokens=256,
     ),
-    # baichuan2_7b_chat_doctor: GenerationConfig.from_pretrained(
-    #     doctors_path[baichuan2_7b_chat_doctor]
-    # ),
+    baichuan2_7b_chat_doctor: GenerationConfig.from_pretrained(
+        doctors_path[baichuan2_7b_chat_doctor]
+    ),
 }
 
 

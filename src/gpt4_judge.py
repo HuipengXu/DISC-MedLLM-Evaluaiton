@@ -9,8 +9,9 @@ from collections import defaultdict
 from openai import OpenAI
 
 from gpt4_judge_prompt import JUDGE_PROMPT
+from doctors import openai_api_key
 
-client = OpenAI(api_key="")
+client = OpenAI(api_key=openai_api_key)
 
 
 def extract_ratings(input_string):
