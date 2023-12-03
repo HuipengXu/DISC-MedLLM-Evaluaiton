@@ -38,8 +38,8 @@ def process_row(row, doctor, model, tokenizer, chat_func, save_dir):
             )
 
             # 与 GPT-3.5 进行对话
-            gpt_chat_history = gpt3_interaction(gpt_chat_history)
-            # gpt_chat_history = gpt3_interaction_test(gpt_chat_history)
+            # gpt_chat_history = gpt3_interaction(gpt_chat_history)
+            gpt_chat_history = gpt3_interaction_test(gpt_chat_history)
 
             # 对话以医生结束
         gpt_chat_history = chat_func(
@@ -50,7 +50,6 @@ def process_row(row, doctor, model, tokenizer, chat_func, save_dir):
 
         # 将对话历史保存为 JSON 文件
         output_file_name = f"{save_dir}/conversation_{row['id']}.json"
-        os.makedirs(os.path.dirname(output_file_name), exist_ok=True)
         patient_doctor_chat_history = format_gpt_chat_history_for_eval(gpt_chat_history)
         conversation = {
             "id": row["id"],

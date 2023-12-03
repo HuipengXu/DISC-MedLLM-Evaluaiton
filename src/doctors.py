@@ -4,33 +4,35 @@ import openai
 
 from transformers import GenerationConfig
 
-openai_api_key = "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"
+openai_api_key = ""
 client = openai.OpenAI(api_key=openai_api_key)
 
 
-llama2_7b_instruct_doctor = "medchat"
+medchat_doctor = "medchat"
 baichuan2_7b_chat_doctor = "baichuan2-7b-chat"
 bianque2_doctor = "bianque-2"
+huatuo2_7b_doctor = "huatuo2_7b"
 # gpt3_doctor = "gpt-3.5-turbo-1106"
 gpt3_doctor = "gpt-3.5-turbo"
 gpt4_doctor = "gpt-4-1106-preview"
 
 
 doctors_path = {
-    llama2_7b_instruct_doctor: "models/llama-2-7b-instruct-all_v3-e3_merged",
-    baichuan2_7b_chat_doctor: "models/Baichuan2-7B-Chat",
+    medchat_doctor: "models/llama-2-7b-instruct-all_v3-e3_merged",
+    baichuan2_7b_chat_doctor: "/data1/huipeng6/weights/baichuan-inc/Baichuan2-7B-Chat",
     bianque2_doctor: "models/AI-ModelScope/BianQue-2",
+    huatuo2_7b_doctor: "/data1/huipeng6/weights/HuatuoGPT2-7B",
     gpt3_doctor: gpt3_doctor,
     gpt4_doctor: gpt4_doctor,
 }
 
 docters_instruction_templates = {
-    llama2_7b_instruct_doctor: "下面是患者和你的历史对话，请你运用你的知识来正确回答提问。\n### 问题:\n{instruction}\n### 回答:\n",
+    medchat_doctor: "下面是患者和你的历史对话，请你运用你的知识来正确回答提问。\n### 问题:\n{instruction}\n### 回答:\n",
     baichuan2_7b_chat_doctor: "<reserved_106>{instruction}<reserved_107>",
 }
 
 doctors_generation_config = {
-    llama2_7b_instruct_doctor: GenerationConfig(
+    medchat_doctor: GenerationConfig(
         temperature=0.5,
         top_k=40,
         top_p=0.75,
@@ -39,6 +41,9 @@ doctors_generation_config = {
     ),
     baichuan2_7b_chat_doctor: GenerationConfig.from_pretrained(
         doctors_path[baichuan2_7b_chat_doctor]
+    ),
+    huatuo2_7b_doctor: GenerationConfig.from_pretrained(
+        doctors_path[huatuo2_7b_doctor]
     ),
 }
 
@@ -67,7 +72,7 @@ def format_gpt_chat_history_for_eval(history):
     return history_copy
 
 
-def llama2_chat(model, tokenizer, history=None):
+def medchat(model, tokenizer, history=None):
     history_copy = preprocess_history(history)
 
     med_chat_history = "".join(
@@ -78,7 +83,7 @@ def llama2_chat(model, tokenizer, history=None):
     )
 
     input_text = generate_prompt(
-        llama2_7b_instruct_doctor, instruction=med_chat_history
+        medchat_doctor, instruction=med_chat_history
     )
 
     inputs = tokenizer(input_text, return_tensors="pt")
@@ -87,7 +92,7 @@ def llama2_chat(model, tokenizer, history=None):
         attention_mask=inputs["attention_mask"].cuda(),
         eos_token_id=tokenizer.eos_token_id,
         pad_token_id=tokenizer.pad_token_id,
-        generation_config=doctors_generation_config[llama2_7b_instruct_doctor],
+        generation_config=doctors_generation_config[medchat_doctor],
     )
     s = generation_output[0]
     output = tokenizer.decode(s, skip_special_tokens=True)
@@ -108,6 +113,21 @@ def baichuan2_7b_chat(model, tokenizer, history=None):
     system_message = "你现在是一名专业的医生，需要你根据病人提供的信息和病人展开对话，进行专业的诊断以及给出治疗建议"
     history_copy = [{"role": "system", "content": system_message}] + history_copy
     model.generation_config = doctors_generation_config[baichuan2_7b_chat_doctor]
+    response = model.chat(tokenizer, history_copy).strip()
+    history += [{"role": "user", "content": response}]
+    return history
+
+
+def huatuo2_7b_chat(model, tokenizer, history=None):
+    history_copy = preprocess_history(history)
+    history_copy = [
+        {
+            "role": "user" if turn["role"] == "assistant" else "assistant",
+            "content": turn["content"],
+        }
+        for turn in history_copy
+    ]
+    model.generation_config = doctors_generation_config[huatuo2_7b_doctor]
     response = model.chat(tokenizer, history_copy).strip()
     history += [{"role": "user", "content": response}]
     return history
@@ -167,9 +187,10 @@ def gpt(model, tokenizer=None, history=None):
 
 
 doctors_call = {
-    llama2_7b_instruct_doctor: llama2_chat,
+    medchat_doctor: medchat,
     baichuan2_7b_chat_doctor: baichuan2_7b_chat,
     bianque2_doctor: bianque2,
+    huatuo2_7b_doctor: huatuo2_7b_chat,
     gpt3_doctor: gpt,
     gpt4_doctor: gpt,
 }

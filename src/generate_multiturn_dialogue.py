@@ -34,6 +34,7 @@ def chat_with_chatgpt(doctor):
     chat_func = doctors_call[doctor]
 
     save_dir = f"data/{doctor}_chatgpt_multiturn_dialogue"
+    os.makedirs(save_dir, exist_ok=True)
 
     # Use joblib to parallelize the for loop
     Parallel(n_jobs=3, verbose=10)(
@@ -51,5 +52,5 @@ def chat_with_chatgpt(doctor):
 
 
 if __name__ == "__main__":
-    doctor = gpt3_doctor
+    doctor = huatuo2_7b_doctor
     chat_with_chatgpt(doctor)
