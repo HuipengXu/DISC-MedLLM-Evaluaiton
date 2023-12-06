@@ -1,0 +1,30 @@
+{
+    "id": 15341,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，不知道是怎么回事，能帮我看看吗？"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，当然可以帮您看看。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是男性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，男性患者出现头晕的情况比较常见。您有什么其他症状吗？"
+        },
+        {
+            "role": "patient",
+            "content": "除了头晕之外，我还感觉到有些眩晕，有时候还会出现恶心和呕吐的情况。"
+        },
+        {
+            "role": "doctor",
+            "content": "这些症状听起来像是左侧前庭下神经炎。您有没有偏头痛的病史呢？"
+        }
+    ]
+}

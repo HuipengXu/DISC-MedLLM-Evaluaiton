@@ -1,0 +1,30 @@
+{
+    "id": 11242,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近头晕伴听力下降，还有耳闷感，不知道是怎么回事。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您解答。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性患者更容易出现一些耳部问题。请问您的年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年35岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "谢谢您的回答。除了头晕伴听力下降和耳闷感，您还有其他不适的症状吗？"
+        }
+    ]
+}

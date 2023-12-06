@@ -1,0 +1,30 @@
+{
+    "id": 12459,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕恶心，想请问一下是怎么回事呢？"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您解答。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是男性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我已经45岁了。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，您有什么既往史吗？"
+        }
+    ]
+}

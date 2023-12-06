@@ -1,0 +1,30 @@
+{
+    "id": 12601,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕、头胀，还有心脏不适和出汗，有点担心，想来看看医生。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴能为您服务。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是一名男性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年36岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "谢谢您的信息。除了这些症状，您还有其他既往史或者家族史吗？"
+        }
+    ]
+}

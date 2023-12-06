@@ -1,0 +1,30 @@
+{
+    "id": 2122,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，行走不稳，能帮我看看是怎么回事吗？"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您服务。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是一名女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，谢谢您的回答。请问您的年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年45岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "了解了，谢谢您的信息。您有什么既往史吗？"
+        }
+    ]
+}

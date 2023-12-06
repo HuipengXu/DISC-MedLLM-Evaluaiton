@@ -1,0 +1,30 @@
+{
+    "id": 9120,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，有时候还会眩晕，能帮我看看是怎么回事吗？"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您服务。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性患者更容易出现头晕的症状。您今年多大了？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年29岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，年龄稍小一些。您有没有什么既往病史呢？"
+        }
+    ]
+}

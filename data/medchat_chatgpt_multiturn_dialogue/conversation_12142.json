@@ -1,0 +1,30 @@
+{
+    "id": 12142,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，有时候还会摔倒，不知道是怎么回事。您能帮我看看吗？"
+        },
+        {
+            "role": "doctor",
+            "content": "您好。请问您是男性还是女性？年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性，35岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性35岁，有没有什么既往病史呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我有一点高血压史，但平时都有在服药控制。除此之外，没有其他重大疾病。"
+        },
+        {
+            "role": "doctor",
+            "content": "了解了，还有其他症状吗？比如偏头痛史、晕车史、睡眠史等？"
+        }
+    ]
+}

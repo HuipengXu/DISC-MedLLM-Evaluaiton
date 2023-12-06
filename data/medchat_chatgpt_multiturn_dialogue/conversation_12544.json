@@ -1,0 +1,30 @@
+{
+    "id": 12544,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，最近我出现了眩晕伴恶心呕吐行走不稳的症状，想来看看您能否帮助我解决这个问题。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您服务。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是一名女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年33岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "谢谢您提供的信息。除了眩晕伴恶心呕吐行走不稳的症状外，您还有其他既往史或者现病史吗？"
+        }
+    ]
+}

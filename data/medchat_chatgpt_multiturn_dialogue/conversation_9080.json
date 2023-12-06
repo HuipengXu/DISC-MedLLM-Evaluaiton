@@ -1,0 +1,30 @@
+{
+    "id": 9080,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕眼花，耳朵还时不时会有轰鸣声，不知道是怎么回事。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您解答。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是男性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我35岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "谢谢您的信息。除了头晕眼花和耳鸣，您还有其他不适的症状吗？"
+        }
+    ]
+}

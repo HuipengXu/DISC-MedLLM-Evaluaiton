@@ -1,0 +1,30 @@
+{
+    "id": 12998,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，头脑昏沉，情绪也不佳，不知道是怎么回事。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您解答疑惑。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性患者更容易出现一些症状。您今年多大了呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年30岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "了解了，您有没有什么既往病史呢？"
+        }
+    ]
+}

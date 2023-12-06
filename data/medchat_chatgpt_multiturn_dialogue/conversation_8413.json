@@ -1,0 +1,30 @@
+{
+    "id": 8413,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我是一名71岁的男性患者，最近出现了反复眩晕发作6天的情况，伴随恶心呕吐，每次头晕不超过1分钟缓解。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，请问您有什么既往病史吗？"
+        },
+        {
+            "role": "patient",
+            "content": "我之前有高血压和心脏病史，并且在最近几年患有偏头痛。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，除了眩晕和偏头痛，您还有其他不适的症状吗？"
+        },
+        {
+            "role": "patient",
+            "content": "我最近也感觉耳鸣，有时还觉得耳朵发胀。"
+        },
+        {
+            "role": "doctor",
+            "content": "您有晕车史吗？"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "id": 9324,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕眼花，还伴随恶心，不知道是怎么回事。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您解答。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性患者更容易出现头晕的情况。请问您的年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年32岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "了解了，您的既往史中有没有什么需要我们注意的疾病呢？"
+        }
+    ]
+}

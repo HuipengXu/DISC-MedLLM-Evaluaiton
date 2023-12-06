@@ -1,0 +1,30 @@
+{
+    "id": 10816,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕耳鸣，情绪也不佳，有点担心。您能帮我看看吗？"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您服务。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性患者比较多。请问您的年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年35岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "了解了，女性35岁是比较常见的年龄。您之前有什么既往史吗？"
+        }
+    ]
+}

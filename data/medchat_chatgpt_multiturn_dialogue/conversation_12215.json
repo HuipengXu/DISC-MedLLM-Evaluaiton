@@ -1,0 +1,30 @@
+{
+    "id": 12215,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，有时候还会晃头，上下楼梯或者翻身时更明显，持续时间不到1分钟就会好转。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您服务。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年45岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "谢谢您的信息。除了头晕之外，您还有其他不适吗？"
+        }
+    ]
+}

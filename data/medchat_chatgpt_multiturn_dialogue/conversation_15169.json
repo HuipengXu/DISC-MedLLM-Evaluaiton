@@ -1,0 +1,30 @@
+{
+    "id": 15169,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，有时候还会卧床不起，持续几秒钟，有点担心。请问您能帮我看看吗？"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，当然可以帮您看看。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性患者比较多。请问您的年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年45岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "明白了，那您有没有其他的既往史或者其他病史呢？"
+        }
+    ]
+}

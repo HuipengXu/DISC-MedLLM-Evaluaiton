@@ -1,0 +1,30 @@
+{
+    "id": 10087,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉耳鸣，还有头晕，想来看看怎么回事。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您服务。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是男性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，请问您的年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年55岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "谢谢您的信息。除了耳鸣和头晕，您还有其他不适的症状吗？"
+        }
+    ]
+}

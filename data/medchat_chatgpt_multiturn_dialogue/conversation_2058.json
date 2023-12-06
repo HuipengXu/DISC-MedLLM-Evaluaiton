@@ -1,0 +1,30 @@
+{
+    "id": 2058,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，伴随恶心呕吐，走路也不稳定，还有左耳鸣，您能帮我看看吗？"
+        },
+        {
+            "role": "doctor",
+            "content": "您好。请问您是男性还是女性？年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性，28岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性28岁，有没有其他既往史或者家族史呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我没有其他特殊的既往史，家族中也没有类似症状的人。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，那您有没有偏头痛史或者晕车史呢？"
+        }
+    ]
+}

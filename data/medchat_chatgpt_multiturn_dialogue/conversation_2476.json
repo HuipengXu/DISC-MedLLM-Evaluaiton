@@ -1,0 +1,30 @@
+{
+    "id": 2476,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我是一位65岁的女性患者，有些健康问题想咨询一下。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，请问有什么不舒服的症状呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我最近感觉特别疲倦，连续几天没有精力，还有咳嗽和胸闷的情况。我有点担心是不是有什么严重的健康问题。"
+        },
+        {
+            "role": "doctor",
+            "content": "您有高血压和糖尿病的既往史吗？"
+        },
+        {
+            "role": "patient",
+            "content": "是的，我有高血压和糖尿病的既往病史。"
+        },
+        {
+            "role": "doctor",
+            "content": "除了这些症状，您还有其他不适吗？比如偏头痛或者晕车史？"
+        }
+    ]
+}

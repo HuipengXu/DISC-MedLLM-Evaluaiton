@@ -1,0 +1,30 @@
+{
+    "id": 10822,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕眼花，有时候还会出现眩晕的情况，不知道是怎么回事。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您解答。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性患者更容易出现眩晕症状。您有什么既往病史吗？"
+        },
+        {
+            "role": "patient",
+            "content": "我有高血压和偏头痛的病史。"
+        },
+        {
+            "role": "doctor",
+            "content": "了解了，这两个病史可能与您目前的症状有一定关系。您有没有其他症状，比如听力下降或者耳鸣？"
+        }
+    ]
+}

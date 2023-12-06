@@ -12,8 +12,7 @@ medchat_doctor = "medchat"
 baichuan2_7b_chat_doctor = "baichuan2-7b-chat"
 bianque2_doctor = "bianque-2"
 huatuo2_7b_doctor = "huatuo2_7b"
-# gpt3_doctor = "gpt-3.5-turbo-1106"
-gpt3_doctor = "gpt-3.5-turbo"
+gpt3_doctor = "gpt-3.5-turbo-1106"
 gpt4_doctor = "gpt-4-1106-preview"
 
 
@@ -170,6 +169,7 @@ def bianque2(model, tokenizer, history=None):
 
 
 def gpt(model, tokenizer=None, history=None):
+    print(f'current model: {model}')
     history_copy = preprocess_history(history)
     history_copy = [
         {

@@ -1,0 +1,30 @@
+{
+    "id": 14174,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，伴随恶心和呕吐，走路也不太稳定，已经持续了3天了。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您服务。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是男性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，年龄是多少呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我36岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "谢谢您的信息。除了这次的症状，您还有其他的既往史吗？"
+        }
+    ]
+}

@@ -66,7 +66,7 @@ if __name__ == "__main__":
         if not messages:
             continue
         dialogues.append({"id": idx, "num_turns": 1, "history": messages})
-    dialogues = random.sample(dialogues, k=2000)  # 采样2k进行评估
+    dialogues = random.sample(dialogues, k=300)  # 采样2k进行评估
 
     pd.DataFrame(dialogues).to_json(
         "./data/instruct_chatgpt_messages.jsonl",

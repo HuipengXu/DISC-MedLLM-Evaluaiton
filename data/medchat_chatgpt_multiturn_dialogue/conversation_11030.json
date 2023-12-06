@@ -1,0 +1,30 @@
+{
+    "id": 11030,
+    "model": "medchat",
+    "conversation": [
+        {
+            "role": "patient",
+            "content": "您好，我最近感觉头晕，走路不稳，还有耳鸣，不知道是怎么回事。"
+        },
+        {
+            "role": "doctor",
+            "content": "您好，很高兴为您解答。请问您是男性还是女性呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我是女性。"
+        },
+        {
+            "role": "doctor",
+            "content": "好的，女性患者更容易出现一些问题。您今年是多少岁呢？"
+        },
+        {
+            "role": "patient",
+            "content": "我今年48岁。"
+        },
+        {
+            "role": "doctor",
+            "content": "了解了，您有没有其他既往史或者家族史呢？"
+        }
+    ]
+}
